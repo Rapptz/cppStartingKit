@@ -238,6 +238,15 @@
 			<string>keyword.operator.cast.c++</string>
 		</dict>
 <!--------------------------------------
+	Keyword sizeof - C++
+---------------------------------------->
+		<dict>
+			<key>match</key>
+			<string>\b(sizeof)\b</string>
+			<key>name</key>
+			<string>keyword.operator.sizeof.c</string>
+		</dict>
+<!--------------------------------------
 	Storage Type - C
 ---------------------------------------->
 		<dict>
