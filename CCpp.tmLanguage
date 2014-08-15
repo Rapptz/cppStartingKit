@@ -269,7 +269,7 @@
 ------------------------------------------->
 		<dict>
 			<key>match</key>
-			<string>\b(size_t|int8_t|int16_t|int32_t|int64_t|uint8_t|uint16_t|uint32_t|uint64_t|char16_t|char32_t)\b</string>
+			<string>\b(size_t|int8_t|int16_t|int32_t|int64_t|uint8_t|uint16_t|uint32_t|uint64_t|char16_t|char32_t|ptrdiff_t|max_align_t|nullptr_t)\b</string>
 			<key>name</key>
 			<string>storage.type.c++11</string>
 		</dict>
