@@ -238,13 +238,13 @@
 			<string>keyword.operator.cast.c++</string>
 		</dict>
 <!--------------------------------------
-	Keyword sizeof - C++
+	Keyword Operators - C++
 ---------------------------------------->
 		<dict>
 			<key>match</key>
-			<string>\b(sizeof)\b</string>
+			<string>\b(sizeof|static_assert|requires|alignof)\b</string>
 			<key>name</key>
-			<string>keyword.operator.sizeof.c</string>
+			<string>keyword.operator.c++</string>
 		</dict>
 <!--------------------------------------
 	Storage Type - C
@@ -269,7 +269,7 @@
 ------------------------------------------->
 		<dict>
 			<key>match</key>
-			<string>\b(size_t|int8_t|int16_t|int32_t|int64_t|uint8_t|uint16_t|uint32_t|uint64_t|char16_t|char32_t|ptrdiff_t|max_align_t|nullptr_t)\b</string>
+			<string>\b(size_t|int8_t|int16_t|int32_t|int64_t|uint8_t|uint16_t|uint32_t|uint64_t|char16_t|char32_t|ptrdiff_t|max_align_t|nullptr_t|decltype)\b</string>
 			<key>name</key>
 			<string>storage.type.c++11</string>
 		</dict>
@@ -278,7 +278,7 @@
 ---------------------------------------->
 		<dict>
 			<key>match</key>
-			<string>\btemplate\b\s*</string>
+			<string>\b(template|concept)\b\s*</string>
 			<key>name</key>
 			<string>storage.type.template.c++</string>
 		</dict>
@@ -287,7 +287,7 @@
 ---------------------------------------->
 		<dict>
 			<key>match</key>
-			<string>\b(const|extern|register|restrict|static|volatile|inline)\b</string>
+			<string>\b(const|extern|register|restrict|static|volatile|inline|thread_local|alignas)\b</string>
 			<key>name</key>
 			<string>storage.modifier.c</string>
 		</dict>
