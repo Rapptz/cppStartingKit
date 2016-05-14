@@ -108,7 +108,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>raw.string.ccpp</string>
+			<string>string.quoted.double.c++</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -122,7 +122,7 @@
 ---------------------------------------->
 		<dict>
 			<key>begin</key>
-			<string>(R|Ru|RU|uR|UR)(\"\()\.*</string>
+			<string>(R|Ru|RU|uR|UR)(\"\w*\()\.*</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -137,7 +137,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(\)\")</string>
+			<string>(\)\w*\")</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>0</key>
@@ -147,7 +147,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>raw.string.ccpp</string>
+			<string>string.quoted.double.c++</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -251,7 +251,7 @@
 ---------------------------------------->
 		<dict>
 			<key>match</key>
-			<string>\b(asm|__asm__|auto|bool|_Bool|char|_Complex|double|enum|float|_Imaginary|string|int|long|short|signed|struct|typedef|union|unsigned|void)\b</string>
+			<string>\b(asm|__asm__|auto|bool|_Bool|char|_Complex|double|enum|float|_Imaginary|int|long|short|signed|struct|typedef|union|unsigned|void)\b</string>
 			<key>name</key>
 			<string>storage.type.c</string>
 		</dict>
@@ -308,7 +308,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(private:|protected:|public:)</string>
+			<string>\b(private:?|protected:?|public:?)\b</string>
 			<key>name</key>
 			<string>storage.modifier.c++</string>
 		</dict>
@@ -333,46 +333,6 @@
 			<key>name</key>
 			<string>storage.modifier.c++</string>
 		</dict>
-<!-----------------------------------------------
-	Constant Other Variable Mac Classic C - C
------------------------------------------------->
-		<dict>
-			<key>comment</key>
-			<string>common C constant naming idiom -- kConstantVariable</string>
-			<key>match</key>
-			<string>\bk[A-Z]\w*\b</string>
-			<key>name</key>
-			<string>constant.other.variable.mac-classic.c</string>
-		</dict>
-<!------------------------------------------------------
-	Variable Other Readwrite Global Mac Classic C - C
-------------------------------------------------------->
-		<dict>
-			<key>match</key>
-			<string>\bg[A-Z]\w*\b</string>
-			<key>name</key>
-			<string>variable.other.readwrite.global.mac-classic.c</string>
-		</dict>
-<!---------------------------------------------------------
-	Variable Other Readwrite Static Mac Classic C - C
---------------------------------------------------------->
-		<dict>
-			<key>match</key>
-			<string>\bs[A-Z]\w*\b</string>
-			<key>name</key>
-			<string>variable.other.readwrite.static.mac-classic.c</string>
-		</dict>
-<!-------------------------------------------
-	Variable Other Readwrite Member - C++
---------------------------------------------->
-		<dict>
-			<key>comment</key>
-			<string>common C++ instance var naming idiom -- fMemberName</string>
-			<key>match</key>
-			<string>\b(f|m)[A-Z]\w*\b</string>
-			<key>name</key>
-			<string>variable.other.readwrite.member.c++</string>
-		</dict>
 <!----------------------------
 	Variable Language - C++
 ----------------------------->
@@ -396,7 +356,7 @@
 -------------------------------->
 		<dict>
 			<key>match</key>
-			<string>\b(nullptr|this)\b</string>
+			<string>\b(nullptr)\b</string>
 			<key>name</key>
 			<string>constant.language.c++</string>
 		</dict>
@@ -408,6 +368,15 @@
 			<string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\b</string>
 			<key>name</key>
 			<string>constant.numeric.c</string>
+		</dict>
+<!-----------------------------
+	Variable Language - C++
+-------------------------------->
+		<dict>
+			<key>match</key>
+			<string>\b(this)\b</string>
+			<key>name</key>
+			<string>variable.language.c++</string>
 		</dict>
 <!--------------------------------------
 	Support Type System Types - C
@@ -436,38 +405,20 @@
 			<key>name</key>
 			<string>support.type.stdint.c</string>
 		</dict>
-<!--------------------------------------
-	Constant Mac Classic C - C
----------------------------------------->
-		<dict>
-			<key>match</key>
-			<string>\b(noErr|kNilOptions|kInvalidID|kVariableLengthArray)\b</string>
-			<key>name</key>
-			<string>support.constant.mac-classic.c</string>
-		</dict>
-<!--------------------------------------
-	Mac Classic C System Support - C
----------------------------------------->
-		<dict>
-			<key>match</key>
-			<string>\b(AbsoluteTime|Boolean|Byte|ByteCount|ByteOffset|BytePtr|CompTimeValue|ConstLogicalAddress|ConstStrFileNameParam|ConstStringPtr|Duration|Fixed|FixedPtr|Float32|Float32Point|Float64|Float80|Float96|FourCharCode|Fract|FractPtr|Handle|ItemCount|LogicalAddress|OptionBits|OSErr|OSStatus|OSType|OSTypePtr|PhysicalAddress|ProcessSerialNumber|ProcessSerialNumberPtr|ProcHandle|Ptr|ResType|ResTypePtr|ShortFixed|ShortFixedPtr|SignedByte|SInt16|SInt32|SInt64|SInt8|Size|StrFileName|StringHandle|StringPtr|TimeBase|TimeRecord|TimeScale|TimeValue|TimeValue64|UInt16|UInt32|UInt64|UInt8|UniChar|UniCharCount|UniCharCountPtr|UniCharPtr|UnicodeScalarValue|UniversalProcHandle|UniversalProcPtr|UnsignedFixed|UnsignedFixedPtr|UnsignedWide|UTF16Char|UTF32Char|UTF8Char)\b</string>
-			<key>name</key>
-			<string>support.type.mac-classic.c</string>
-		</dict>
 <!---------------------------------------------------
 	Deconstructor - CCpp
 ----------------------------------------------------->
-		<dict>
+		<!-- <dict>
 			<key>match</key>
 			<string>\~\w+</string>
 			<key>name</key>
 			<string>deconstructor.ccpp</string>
-		</dict>
+		</dict> -->
 
 <!---------------------------------------------------
 	Pointer - CCpp
 ----------------------------------------------------->
-		<dict>
+		<!-- <dict>
 			<key>match</key>
 			<string>\w+\:\:\w+\*</string>
 			<key>name</key>
@@ -496,37 +447,37 @@
 			<string>\*\w+</string>
 			<key>name</key>
 			<string>pointer.ccpp</string>
-		</dict>
+		</dict> -->
 <!---------------------------------------------------
 	Address - CCpp
 ----------------------------------------------------->
-		<dict>
+		<!-- <dict>
 			<key>match</key>
 			<string>\&\w+</string>
 			<key>name</key>
 			<string>address.ccpp</string>
-		</dict>
+		</dict> -->
 <!---------------------------------------------------
 	Array - CCpp
 ----------------------------------------------------->
-		<dict>
+		<!-- <dict>
 			<key>match</key>
 			<string>\w+(?=\[)</string>
 			<key>name</key>
 			<string>array.ccpp</string>
-		</dict>
+		</dict> -->
 <!---------------------------------------------------
 	Function Support - CCpp
 ----------------------------------------------------->
 		<dict>
 			<key>match</key>
-			<string>(?&lt;=class|wchar_t|nullptr_t)\s\w+</string>
+			<string>(?&lt;=class|wchar_t|nullptr_t|struct)\s\w+</string>
 			<key>name</key>
-			<string>meta.class-struct.c++ entity.name.type.c++</string>
+			<string>meta.class-struct.c++ entity.name.type.class.c++</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\w+(?=\()</string>
+			<string>~?\w+(?=\()</string>
 			<key>name</key>
 			<string>meta.function.c entity.name.function.c</string>
 		</dict>
@@ -542,6 +493,22 @@
 			<key>name</key>
 			<string>meta.function.c entity.name.function.c</string>
 		</dict>
+<!-------------------------------------
+	Typedef Support
+-------------------------------------->
+		<dict>
+			<key>match</key>
+			<string>(?&lt;=using)\s*(\w+)\s*=</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.type</string>
+				</dict>
+			</dict>
+		</dict>
+
 <!--------------------------------------
 	Logical Operator - CCpp
 ---------------------------------------->
