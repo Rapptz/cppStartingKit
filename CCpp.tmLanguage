@@ -159,7 +159,7 @@
 <!----------------------------------------
 	Member Initializer - CCpp
 ---------------------------------------->
-		<dict>
+<!-- 		<dict>
 			<key>begin</key>
 			<string>(\:)\s*(\w+\(\w+\))+</string>
 			<key>beginCaptures</key>
@@ -194,7 +194,7 @@
 					<string>#comments</string>
 				</dict>
 			</array>
-		</dict>
+		</dict> -->
 <!--------------------------------------
 	Keyword Control - C
 ---------------------------------------->
